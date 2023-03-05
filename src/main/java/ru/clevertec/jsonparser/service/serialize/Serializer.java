@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import static ru.clevertec.jsonparser.service.serialize.SerializeByType.serializeByType;
 import static ru.clevertec.jsonparser.util.ParserUtil.capitalize;
 
-public class Serialize {
+public class Serializer {
 
     public static final String LEFT_FIGURE_BRACKET = "{";
     public static final String RIGHT_FIGURE_BRACKET = "}";

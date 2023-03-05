@@ -6,10 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import ru.clevertec.jsonparser.service.testutil.testmodel.Group;
 
-import java.util.Map;
-
 import static org.assertj.core.api.Assertions.assertThat;
-
 
 class DeserializerTest {
 
@@ -21,8 +18,7 @@ class DeserializerTest {
     @Test
     @DisplayName("Custom deserialization")
     void checkExternalLibraryHasTheSameResult() throws JsonProcessingException {
-        Map<String, String> stringStringMap = Parser.parseTo(objectInJson);
-        Group deserializedActual = Deserializer.deserialize(stringStringMap, Group.class, null);
+        Group deserializedActual = Deserializer.deserialize(objectInJson, Group.class);
         Group deserializedByJackson = mapper.readValue(objectInJson, Group.class);
         assertThat(deserializedActual).isEqualTo(deserializedByJackson);
     }

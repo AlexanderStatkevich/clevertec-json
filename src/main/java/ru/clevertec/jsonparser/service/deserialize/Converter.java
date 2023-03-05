@@ -28,7 +28,6 @@ public class Converter {
         FUNCTION_TO_CONVERT.put(Boolean.class, Boolean::valueOf);
     }
 
-
     public static <T> T convert(String parameter, Class<T> type) {
         if (parameter == null) {
             return null;

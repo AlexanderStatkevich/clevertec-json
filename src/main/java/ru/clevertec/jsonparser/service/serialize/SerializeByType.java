@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static ru.clevertec.jsonparser.service.serialize.Serialize.serialize;
+import static ru.clevertec.jsonparser.service.serialize.Serializer.serialize;
 import static ru.clevertec.jsonparser.util.ParserUtil.isAssignableFrom;
 
 public class SerializeByType {
