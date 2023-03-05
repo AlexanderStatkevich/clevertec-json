@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-public class Converter {
+class Converter {
 
     private static final Map<Class<?>, Function<String, ?>> FUNCTION_TO_CONVERT = new HashMap<>();
 

@@ -13,17 +13,17 @@ import static ru.clevertec.jsonparser.util.ParserUtil.capitalize;
 
 public class Serializer {
 
-    public static final String LEFT_FIGURE_BRACKET = "{";
-    public static final String RIGHT_FIGURE_BRACKET = "}";
-    public static final String DELIMITER_COMMA = ",";
-    public static final String BOOLEAN_METHOD_PREFIX = "is";
-    public static final String DEFAULT_METHOD_PREFIX = "get";
+    private static final String LEFT_FIGURE_BRACKET = "{";
+    private static final String RIGHT_FIGURE_BRACKET = "}";
+    private static final String DELIMITER_COMMA = ",";
+    private static final String BOOLEAN_METHOD_PREFIX = "is";
+    private static final String DEFAULT_METHOD_PREFIX = "get";
 
     public static String serialize(Object object) {
         Class<?> clazz = object.getClass();
         Field[] declaredFields = clazz.getDeclaredFields();
         String serializedObject = Arrays.stream(declaredFields)
-                .map(field -> applySerialization(field,clazz,object))
+                .map(field -> applySerialization(field, clazz, object))
                 .collect(Collectors.joining(DELIMITER_COMMA));
         return LEFT_FIGURE_BRACKET + serializedObject + RIGHT_FIGURE_BRACKET;
     }

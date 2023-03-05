@@ -8,15 +8,15 @@ import java.util.stream.Collectors;
 import static ru.clevertec.jsonparser.service.serialize.Serializer.serialize;
 import static ru.clevertec.jsonparser.util.ParserUtil.isAssignableFrom;
 
-public class SerializeByType {
+class SerializeByType {
 
-    public static final String LEFT_FIGURE_BRACKET = "{";
-    public static final String RIGHT_FIGURE_BRACKET = "}";
-    public static final String COLON = ":";
-    public static final String LEFT_STRAIGHT_BRACKET = "[";
-    public static final String RIGHT_STRAIGHT_BRACKET = "]";
+    private static final String LEFT_FIGURE_BRACKET = "{";
+    private static final String RIGHT_FIGURE_BRACKET = "}";
+    private static final String COLON = ":";
+    private static final String LEFT_STRAIGHT_BRACKET = "[";
+    private static final String RIGHT_STRAIGHT_BRACKET = "]";
 
-    protected static String serializeByType(String name, Class<?> type, Object value) {
+    public static String serializeByType(String name, Class<?> type, Object value) {
         try {
             if (isAssignableFrom(type, boolean.class, Boolean.class)) {
                 return serializeBoolean(name, value);

@@ -1,6 +1,6 @@
 package ru.clevertec.jsonparser.service.deserialize;
 
-public enum NodeType {
+enum NodeType {
     ARRAY,
     OBJECT
 }
